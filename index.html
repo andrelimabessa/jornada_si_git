@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Git Zero to Hero</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h1>GIT</h1>
+			</section>
+
+			<section>
+				<h2>Pré-Requisito</h2>
+				<ul>
+					<li><a href="file/PortableGit-2.8.2-32-bit.7z.exe">PortableGit_32_Bits</a></li>
+					<li><a href="file/PortableGit-2.8.2-64-bit.7z.exe">PortableGit_64_Bits</a></li>
+				</ul>
+			</section>
+
+			<!-- Por quer vercionar código fonte-->
+
+			<section>
+
+				<section>
+					<h2>Por que vercionar código ? </h2>
+				</section>
+
+				<section>
+					<h2>Passo 1: Construção de equipe </h2>
+					<ul>
+						<li> Cada bancada deve ser compor de uma a duas equipes </li>
+						<li> Equipe de deve ter entre duas ou três pessoas</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<!-- O que é o GIT -->
+			<section>
+
+				<section>
+					<h2>O que é o GIT ? </h2>
+				</section>
+
+				<section>
+					<h2>O GIT é um Sistema de Controle de Versão </h2>
+				</section>
+
+				<section>
+					<h2>O Sistemas de Controle de Versão ? </h2>
+
+					<ul>
+						<li> Sistema de Controle de Versão Centralizado (CVCS) </li>
+						<li> Sistema de Controle de Versão Distribuído (DVCS)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Sistema de Controle de Versão Centralizado (CVCS) </h2>
+					<img data-src="img/lifecycle.png">
+				</section>
+
+				<section>
+					<h2>O GIT é um Sistema de Controle de Versão Distribuído (DVCS) </h2>
+					<div>
+						<img data-src="img/lifecycle.png">
+						<img data-src="img/lifecycle.png">
+					</div>					
+				</section>
+
+				<section>
+					<h2>Passo 1: Construção de equipe </h2>
+					<ul>
+						<li> Cada bancada deve ser compor de uma a duas equipes </li>
+						<li> Equipe de deve ter entre duas ou três pessoas</li>
+					</ul>
+				</section>
+
+			</section>
+
+
+			<!-- Fluxo Criar Repositório-->
+			<section>
+				<section>
+					<h2>Caso 1: Versionar Projeto</h2>
+					<ul>
+						<li> Eu como usuário quero por um projeto sob controle de versão </li>
+						<li> Entro em um diretório</li>
+						<li> Configuro controle de versão</li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Controle de versão centralizado</h2>
+					<img data-src="img/svn.png">
+				</section>
+
+				<section>
+					<h2>Cenário 1: Criando Repositório Local</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							mkdir nova-pasta    /* cria uma nova pasta */
+						</code></pre>
+					<pre><code class="hljs" data-trim contenteditable>
+							cd nova-pasta       /* entra em uma nova pasta */
+						</code></pre>
+					<pre><code class="hljs" data-trim contenteditable>
+							git init
+						</code></pre>
+				</section>
+
+			</section>
+
+			<!-- Fluxo Commit-->
+			<section>
+				<section>
+					<h2>Caso 2: Commit Arquivo</h2>
+					<ul>
+						<li> Eu como usuário quero commitar um arquivo </li>
+						<li> Entro em um diretório sob controle de versão</li>
+						<li> Crio um arquivo</li>
+						<li> Edito o arquivo </li>
+						<li> Commito o arquivo </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito: Ter um arquivo para commitar</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							pwd     /*indica diretório corrente*/
+						</code></pre>
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Área de Trabalho e Área de Preparação</h2>
+					<img data-src="img/stage_area.png">
+				</section>
+
+				<section data-background="#dddddd">
+					<h2>Ciclo de Vida de um Aquivo</h2>
+					<img data-src="img/lifecycle.png">
+				</section>
+
+				<section>
+					<h2>Cenário 1: Qual Estado dos Arquivos </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git status
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Cenário 2: Adicionar Arquivos na Área de Preparação</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git add arquivo
+						</code></pre>
+
+					<pre><code class="hljs" data-trim contenteditable>
+							git add -A
+						</code></pre>
+
+					<pre><code class="hljs" data-trim contenteditable>
+							git status
+						</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Dica: .gitignore </h2>
+					<ul>
+						<li> Crie mais um arquivo com um nome qualquer</li>
+						<li> Cria um arquivo chamado .gitignore </li>
+						<li> Adiciona nele o nome do arquivo criado no primeiro passo</li>
+						<li> Teste de novo o git status </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cenário 3: Commitando Arquivo</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git commit -m "Comentário"
+						</code></pre>
+					<pre><code class="hljs" data-trim contenteditable>
+							git status
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Dica: rm </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git rm nome-arquivo
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Dica: Commite sem Staging Area (Cuidado) </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git commit -a -m "Comentário"
+						</code></pre>
+				</section>
+			</section>
+
+			<!-- Fluxo Backtrack-->
+			<section>
+
+				<section>
+					<h2>Caso 3: Desfazer Alterações</h2>
+					<ul>
+						<li> Eu como usuário quero desfazar alguma alteração</li>
+						<li> Entro em um diretório sob controle de versão</li>
+						<li> Indentifico um artefato que desejo que volte a uma condição anterior</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito: Altere dados em um arquivo que já se encontra em controle de versão </h2>
+				</section>
+
+				<section>
+					<h2>Dica: diff</h2>
+					Para ver as alterações em todos os arquivos
+					<pre><code class="hljs" data-trim contenteditable>
+							git diff
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Cenário 1: Descartar Alteração no Diretório de Trabalho</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git checkout HEAD arquivo
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito: Altere dados em um arquivo que já se encontra em controle de versão </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git add arquivo
+						</code></pre>
+				</section>
+				<section>
+					<h2>Dica: diff</h2>
+					Para ver as alterações na Staging Area
+					<pre><code class="hljs" data-trim contenteditable>
+							git diff --staged
+						</code></pre>
+				</section>
+				<section>
+					<h2>Cenário 2: Descartar Alteração na Área de Preparação</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git reset HEAD arquivo
+						</code></pre>
+				</section>
+
+			</section>
+
+			<!-- Fluxo Branch Simples-->
+			<section>
+
+				<section>
+					<h2>Caso 4: Gerenciar Branches - Básico</h2>
+					<ul>
+						<li> Eu como usuário desejo gerenciar branches</li>
+						<li> Entro em um diretório sob controle de versão</li>
+						<li> Identifico os branches existentes</li>
+						<li> Crio um branche novo</li>
+						<li> Entro no novo branche </li>
+						<li> Commito as alterações para o branch criado </li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<img data-src="img/branch.png">
+				</section>
+
+				<section>
+					<h2>Cenário 1: Identificar Branches Existentes</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git branch
+						</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Cenário 2: Criar um Novo Branch</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git branch nome_do_branch
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Cenário 3: Entrar no Novo Branch</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git checkout nome_do_branch
+						</code></pre>
+				</section>
+
+			</section>
+
+			<!-- Fluxo Branch Simples-->
+			<section>
+
+				<section>
+					<h2>Caso 5: Gerenciar Branches - Merge Simples</h2>
+					<ul>
+						<li> Eu como usuário desejo mesclar dois branches</li>
+						<li> Crio e commito um arquivo no primeiro branch</li>
+						<li> Crio um arquivo no segundo branch (o commit é opcional nesse momento)</li>
+						<li> Mesclo o primeiro branch com o segundo </li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito 1: Ter dois branches com arquivo em comum</h2>
+					<h2>Pré-Requisito 2: Ter o arquivo comum alterado em um dos branches</h2>
+				</section>
+
+				<section>
+					<h2>Cenário 1: Mesclando dois branches</h2>
+					Entro no segundo branch
+					<pre><code class="hljs" data-trim contenteditable>
+							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
+						</code></pre>
+
+				</section>
+
+			</section>
+
+			<!-- Fluxo Branch Conflito-->
+			<section>
+
+				<section>
+					<h2>Caso 6: Gerenciar Branches - Merge com Conflito</h2>
+					<ul>
+						<li> Eu como usuário desejo mesclar dois branches com um arquivo em comum</li>
+						<li> Edito o arquivo comum e commito no primeiro branch</li>
+						<li> Entro no segundo branch</li>
+						<li> Edito o arquivo comum, sem commitar, no segundo branch</li>
+						<li> Tento mesclo o segundo branch com o primeiro </li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Pré-Requisito 1: Criar branch</h3>
+					<h3>Pré-Requisito 2: Alterar arquivo comum no branch original</h3>
+					<h3>Pré-Requisito 3: Commitar arquivo comum </h3>
+					<h3>Pré-Requisito 4: Entrar no segundo branch</h3>
+					<h3>Pré-Requisito 5: Alterar arquivo comum sem commitar </h3>
+				</section>
+				<section>
+					<h2>Cenário 1: Mesclando Dois Branches</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Ver Mensagem</h2>
+				</section>
+
+				<section>
+					<h2>Saída 1: Commita o arquivo no branch corrente e depois faz o merge</h2>
+				</section>
+
+				<section>
+					<h2>Saída 2: Uso de Stash</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git stash
+						</code></pre>
+
+					<pre><code class="fragment hljs" data-trim contenteditable>
+							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
+						</code></pre>
+
+					<pre><code class="fragment hljs" data-trim contenteditable>
+							git stash pop
+						</code></pre>
+
+				</section>
+			</section>
+			<!-- Fluxo Worl Team-->
+			<section>
+
+				<section>
+					<h2>Caso 7: Time de Desenvolvimento</h2>
+					<ul>
+						<li> Eu como usuário desejo acessar o repositório compartilhado do meu time de desenvolvimento</li>
+						<li> Devo clonar o repositório</li>
+						<li> Devo manter meu respitório local sincronizado </li>
+					</ul>
+				</section>
+
+				<section data-background="#dddddd">
+					<img data-src="img/blessed.png">
+				</section>
+
+				<section data-background="#dddddd">
+					<img data-src="img/dictator.png">
+				</section>
+
+				<section>
+					<h2>Cenário 1: Clonar Repostório </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git clone https://github.com/andrelimabessa/jornada_si_git.git
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Pré-Requisito 1: Criar branch com seu nome</h3>
+					<h3>Pré-Requisito 2: Entrar no seu branch</h3>
+					<h3>Pré-Requisito 3: Realize alguma alteração nele</h3>
+					<h3>Pré-Requisito 4: Commite a alteração localmente </h3>
+				</section>
+
+				<section>
+					<h2>Cenário 2: Enviar Alterações para o Repositório Remoto</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git push origin nome_branch_corrente
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Cenário 3: Buscar Atualizações do Repositório Remoto</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git pull
+						</code></pre>
+				</section>
+
+			</section>
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+
+</body>
+
+</html>
