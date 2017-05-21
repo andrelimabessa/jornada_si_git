@@ -286,14 +286,11 @@
 			<section>
 
 				<section>
-					<h2>Tópico 5: Gerenciar Branches - Básico</h2>
+					<h2>Tópico 5.1: Gerenciar Branches - Básico</h2>
 					<ul>
-						<li> Eu como usuário desejo gerenciar branches</li>
-						<li> Entro em um diretório sob controle de versão</li>
-						<li> Identifico os branches existentes</li>
-						<li> Crio um branche novo</li>
-						<li> Entro no novo branche </li>
-						<li> Commito as alterações para o branch criado </li>
+						<li> Cenário 1: Indentificar Branches</li>
+						<li> Cenário 2: Criar um Novo Branches</li>
+						<li> Cenário 3: Entrar no Novo Branche </li>
 					</ul>
 				</section>
 
@@ -329,58 +326,54 @@
 			<section>
 
 				<section>
-					<h2>Caso 5: Gerenciar Branches - Merge Simples</h2>
+					<h2>Tópico 5.2: Gerenciar Branches - Merge</h2>
 					<ul>
-						<li> Eu como usuário desejo mesclar dois branches</li>
-						<li> Crio e commito um arquivo no primeiro branch</li>
-						<li> Crio um arquivo no segundo branch (o commit é opcional nesse momento)</li>
-						<li> Mesclo o primeiro branch com o segundo </li>
+						<li> Cenário 1 Merge Simples entre Dois Branches</li>
+						<li> Cenário 2 Merge com Conflito </li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Pré-Requisito 1: Ter dois branches com arquivo em comum</h2>
-					<h2>Pré-Requisito 2: Ter o arquivo comum alterado em um dos branches</h2>
+					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>					
 				</section>
 
 				<section>
-					<h2>Cenário 1: Mesclando dois branches</h2>
-					Entro no segundo branch
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Criar um branch com o nome nova_linha_tabela</li>
+						<li>Vá para esse branch nova_linha_tabela</li>
+						<li>Altere o arquivo index.html</li>
+						<li>Commit o arquivo index.html</li>
+						<li>Volte ao branch master</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>					
 					<pre><code class="hljs" data-trim contenteditable>
-							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
+							git merge nova_linha_tabela
 						</code></pre>
 
 				</section>
 
-			</section>
+				<section>
+					<h2>Cenário 2 Merge com Conflito</h2>					
+				</section>
+
+				<section>
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Volte ao branch nova_linha_tabela</li>
+						<li>Vá para esse branch nova_linha_tabela</li>
+						<li>Altere o arquivo index.html no branch nova_linha_tabela </li>
+						<li>Commit o arquivo index.html no branch nova_linha_tabela</li>
+						<li>Volte ao branch master</li>
+						<li>Altere o arquivo index.html no branch master</li>
+						<li>Tente mesclar nova_linha_tabela com o branch master</li>
+					</ul>
+				</section>
 
 			<!-- Fluxo Branch Conflito-->
-			<section>
-
-				<section>
-					<h2>Caso 6: Gerenciar Branches - Merge com Conflito</h2>
-					<ul>
-						<li> Eu como usuário desejo mesclar dois branches com um arquivo em comum</li>
-						<li> Edito o arquivo comum e commito no primeiro branch</li>
-						<li> Entro no segundo branch</li>
-						<li> Edito o arquivo comum, sem commitar, no segundo branch</li>
-						<li> Tento mesclo o segundo branch com o primeiro </li>
-					</ul>
-				</section>
-
-				<section>
-					<h3>Pré-Requisito 1: Criar branch</h3>
-					<h3>Pré-Requisito 2: Alterar arquivo comum no branch original</h3>
-					<h3>Pré-Requisito 3: Commitar arquivo comum </h3>
-					<h3>Pré-Requisito 4: Entrar no segundo branch</h3>
-					<h3>Pré-Requisito 5: Alterar arquivo comum sem commitar </h3>
-				</section>
-				<section>
-					<h2>Cenário 1: Mesclando Dois Branches</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
-						</code></pre>
-				</section>
 
 				<section>
 					<h2>Ver Mensagem</h2>
@@ -397,12 +390,16 @@
 						</code></pre>
 
 					<pre><code class="fragment hljs" data-trim contenteditable>
-							git merge nome_branch_de_onde_vem_itens_para_mesclar_com_o_corrente
+							git merge nova_linha_tabela
 						</code></pre>
 
 					<pre><code class="fragment hljs" data-trim contenteditable>
 							git stash pop
 						</code></pre>
+
+					<ul class="fragment">
+						<li>Necessário tratar conflito antes de efetuar o commit</li>
+					</ul>
 
 				</section>
 			</section>
@@ -410,28 +407,46 @@
 			<section>
 
 				<section>
-					<h2>Caso 7: Time de Desenvolvimento</h2>
+					<h2>Tópico 6: Repositório Origin</h2>
 					<ul>
-						<li> Eu como usuário desejo acessar o repositório compartilhado do meu time de desenvolvimento</li>
-						<li> Devo clonar o repositório</li>
-						<li> Devo manter meu respitório local sincronizado </li>
+						<li> Cenário 1: Enviar o Repositório Local para Outra Máquina</li>
+						<li> Cenário 2: Clonar o Repositório Compatilhado</li>
 					</ul>
 				</section>
 
-				<section data-background="#dddddd">
-					<img data-src="img/blessed.png">
+				<section>
+					<h2>Cenário 1: Enviar o Repositório Local para Outra Máquina</h2>
 				</section>
 
-				<section data-background="#dddddd">
-					<img data-src="img/dictator.png">
+				<section>
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Criar uma conta no GitHub</li>
+						<li>Criar um novo repositório GitHub</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cenário 1: Enviar o Repositório Local para Outra Máquina </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git remote add origin https://github.com/_endereço_repositorio_.git
+						</code></pre>
+					<pre><code class="hljs" data-trim contenteditable>
+							git push --set-upstream origin master
+						</code></pre>
 				</section>
 
 				<section>
 					<h2>Cenário 1: Clonar Repostório </h2>
 					<pre><code class="hljs" data-trim contenteditable>
-							git clone https://github.com/andrelimabessa/jornada_si_git.git
+							git clone https://github.com/andrelimabessa/jornada_si_git
 						</code></pre>
+
+
+
+						
 				</section>
+
 
 				<section>
 					<h3>Pré-Requisito 1: Criar branch com seu nome</h3>
@@ -452,6 +467,14 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git pull
 						</code></pre>
+				</section>
+
+				<section data-background="#dddddd">
+					<img data-src="img/blessed.png">
+				</section>
+
+				<section data-background="#dddddd">
+					<img data-src="img/dictator.png">
 				</section>
 
 			</section>
