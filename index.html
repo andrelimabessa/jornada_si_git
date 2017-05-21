@@ -56,7 +56,8 @@
 				</section>
 
 				<section data-markdown>
-					"Um sistema de controle de versão ter por função registrar alterações em um arquivo ou conjunto de arquivos ao longo do tempo para que você possa lembrar versões específicas mais tarde."
+					"Um sistema de controle de versão ter por função registrar alterações em um arquivo ou conjunto de arquivos ao longo do tempo
+					para que você possa lembrar versões específicas mais tarde."
 				</section>
 
 				<section>
@@ -76,33 +77,32 @@
 
 			</section>
 
-			<!-- Fluxo Criar Repositório-->
+			<!-- Abrindo arquivo de projeto -->
 			<section>
+
 				<section>
-					<h2>Caso 1: Versionar Projeto</h2>
+					<h2>Tópico 1: Por um projeto sob versionamento</h2>
 					<ul>
-						<li> Eu como usuário quero por um projeto sob controle de versão </li>
-						<li> Entro em um diretório</li>
-						<li> Configuro controle de versão</li>
+						<li><a href="file/repositorio.zip"> Projeto Zip</a></li>
+						<li> Salvar arquivo e descompactar dentro da pasta do PortableGit </li>
 					</ul>
 				</section>
 
-				<section data-background="#dddddd">
-					<h2>Controle de versão centralizado</h2>
-					<img data-src="img/svn.png">
-				</section>
+			</section>
+
+			<!-- Fluxo Criar Repositório-->
+			<section>
 
 				<section>
-					<h2>Cenário 1: Criando Repositório Local</h2>
+					<h2>Tópico 2: Criando Repositório Local</h2>
+
 					<pre><code class="hljs" data-trim contenteditable>
-							mkdir nova-pasta    /* cria uma nova pasta */
-						</code></pre>
-					<pre><code class="hljs" data-trim contenteditable>
-							cd nova-pasta       /* entra em uma nova pasta */
+							cd repositorio       /* para entrar na pasta repositorio */
 						</code></pre>
 					<pre><code class="hljs" data-trim contenteditable>
 							git init
 						</code></pre>
+					<img src="img/init.gif" style="width:640px;height:166px;">
 				</section>
 
 			</section>
@@ -110,68 +110,72 @@
 			<!-- Fluxo Commit-->
 			<section>
 				<section>
-					<h2>Caso 2: Commit Arquivo</h2>
+					<h2>Tópico 3: Commit Arquivo</h2>
 					<ul>
-						<li> Eu como usuário quero commitar um arquivo </li>
-						<li> Entro em um diretório sob controle de versão</li>
-						<li> Crio um arquivo</li>
-						<li> Edito o arquivo </li>
-						<li> Commito o arquivo </li>
+						<li> Entender as diferentes áreas de trabalho </li>
+						<li> Entender os estados que um arquivo pode ter</li>
+						<li> Selecionar arquivos para commit</li>
+						<li> Ignorar arquivos para que eles não sejam commitados</li>
+						<li> Commitar os arquivos </li>
 					</ul>
 				</section>
 
-				<section>
-					<h2>Pré-Requisito: Ter um arquivo para commitar</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							pwd     /*indica diretório corrente*/
-						</code></pre>
-				</section>
-
 				<section data-background="#dddddd">
-					<h2>Área de Trabalho e Área de Preparação</h2>
+					<h2>Áreas de Trabalho </h2>
 					<img data-src="img/stage_area.png">
 				</section>
 
 				<section data-background="#dddddd">
-					<h2>Ciclo de Vida de um Aquivo</h2>
+					<h2>Estados de um arquivo </h2>
 					<img data-src="img/lifecycle.png">
 				</section>
 
 				<section>
-					<h2>Cenário 1: Qual Estado dos Arquivos </h2>
+					<h2>Quais estados dos arquivos ?</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git status
 						</code></pre>
 				</section>
 
 				<section>
-					<h2>Cenário 2: Adicionar Arquivos na Área de Preparação</h2>
+					<h2>Adicionar Arquivos na Área de Preparação</h2>
+
 					<pre><code class="hljs" data-trim contenteditable>
-							git add arquivo
+							git add index.html
 						</code></pre>
 
 					<pre><code class="hljs" data-trim contenteditable>
-							git add -A
+							git add css/starter-template.css
 						</code></pre>
 
 					<pre><code class="hljs" data-trim contenteditable>
 							git status
 						</code></pre>
+				</section>
 
+				<section>
+					<h2>Dica: Remover arquivo da Staging Area </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git rm --cached index.html
+						</code></pre>
 				</section>
 
 				<section>
 					<h2>Dica: .gitignore </h2>
 					<ul>
 						<li> Crie mais um arquivo com um nome qualquer</li>
+						<li> Teste o git status </li>
 						<li> Cria um arquivo chamado .gitignore </li>
+						<pre><code class="hljs" data-trim contenteditable>
+							touch .gitignore 
+						</code></pre>
 						<li> Adiciona nele o nome do arquivo criado no primeiro passo</li>
 						<li> Teste de novo o git status </li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Cenário 3: Commitando Arquivo</h2>
+					<h2>Commitando Arquivo</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git commit -m "Comentário"
 						</code></pre>
@@ -181,9 +185,13 @@
 				</section>
 
 				<section>
-					<h2>Dica: rm </h2>
+					<h2>Dica: Adicionar todos os arquivos Untracked e Modified </h2>
 					<pre><code class="hljs" data-trim contenteditable>
-							git rm nome-arquivo
+							git add -A
+						</code></pre>
+
+					<pre><code class="hljs" data-trim contenteditable>
+							git add .
 						</code></pre>
 				</section>
 
@@ -199,7 +207,7 @@
 			<section>
 
 				<section>
-					<h2>Caso 3: Desfazer Alterações</h2>
+					<h2>Tópico 4: Desfazer Alterações</h2>
 					<ul>
 						<li> Eu como usuário quero desfazar alguma alteração</li>
 						<li> Entro em um diretório sob controle de versão</li>
