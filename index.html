@@ -156,16 +156,6 @@
 				</section>
 
 				<section>
-					<h2>Dica: Remover arquivo da Staging Area </h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git rm --cached index.html
-						</code></pre>
-					<pre><code class="hljs" data-trim contenteditable>
-							git rm --cached -r css/
-						</code></pre>
-				</section>
-
-				<section>
 					<h2>Dica: .gitignore </h2>
 					<ul>
 						<li> Crie mais um arquivo com um nome qualquer</li>
@@ -193,6 +183,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git status
 						</code></pre>
+					<img src="img/commit.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -242,6 +233,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git diff
 						</code></pre>
+					<img src="img/diff.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -249,6 +241,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git checkout HEAD nome_do_arquivo
 						</code></pre>
+					<img src="img/checkout_head.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -272,14 +265,15 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git diff --staged
 						</code></pre>
+					<img src="img/diff_staged.gif" style="width:600px;height:375px;">
 				</section>
 				<section>
 					<h2>Cenário 2: Descartar Alteração na Área de Preparação</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git reset HEAD nome_do_arquivo
 						</code></pre>
+					<img src="img/reset_head.gif" style="width:600px;height:375px;">
 				</section>
-
 			</section>
 
 			<!-- Fluxo Branch Simples-->
@@ -303,7 +297,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git branch
 						</code></pre>
-
+					<img src="img/branch.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -311,6 +305,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git branch nome_do_branch
 						</code></pre>
+						<img src="img/branch_add.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -318,6 +313,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git checkout nome_do_branch
 						</code></pre>
+					<img src="img/checkout_branch.gif" style="width:600px;height:375px;">
 				</section>
 
 			</section>
@@ -340,22 +336,23 @@
 				<section>
 					<h2>Pré-Requisito</h2>
 					<ul>
-						<li>Criar um branch com o nome nova_linha_tabela</li>
-						<li>Vá para esse branch nova_linha_tabela</li>
-						<li>Altere o arquivo index.html</li>
-						<li>Commit o arquivo index.html</li>
+						<li>Criar um branch com o nome nova_entrada</li>
+						<li>Vá para esse branch nova_entrada</li>
+						<li>Altere e Commit o arquivo index.html</li>
 						<li>Volte ao branch master</li>
 					</ul>
+					<img src="img/jurubeba.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
 					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>
 					<pre><code class="hljs" data-trim contenteditable>
-							git merge nova_linha_tabela
+							git merge nova_entrada
 						</code></pre>
-
+					<img src="img/merge.gif" style="width:600px;height:375px;">
 				</section>
 
+				<!-- Fluxo Branch Conflito-->
 				<section>
 					<h2>Cenário 2 Merge com Conflito</h2>
 				</section>
@@ -363,45 +360,17 @@
 				<section>
 					<h2>Pré-Requisito</h2>
 					<ul>
-						<li>Volte ao branch nova_linha_tabela</li>
-						<li>Vá para esse branch nova_linha_tabela</li>
-						<li>Altere o arquivo index.html no branch nova_linha_tabela </li>
-						<li>Commit o arquivo index.html no branch nova_linha_tabela</li>
-						<li>Volte ao branch master</li>
-						<li>Altere o arquivo index.html no branch master</li>
-						<li>Tente mesclar nova_linha_tabela com o branch master</li>
+						<li>Vá ao branch nova_entrada e Altere e Commit o arquivo index.html</li>
+						<li>Faça o mesmo no branch master </li>
+						<li>Tente mesclar nova_entrada com o branch master</li>
 					</ul>
 				</section>
 
-				<!-- Fluxo Branch Conflito-->
-
 				<section>
-					<h2>Ver Mensagem</h2>
+					<h2>Cenário 2 Merge com Conflito</h2>
+					<img src="img/conflito.gif" style="width:600px;height:375px;">
 				</section>
 
-				<section>
-					<h2>Saída 1: Commita o arquivo no branch corrente e depois faz o merge</h2>
-				</section>
-
-				<section>
-					<h2>Saída 2: Uso de Stash</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git stash
-						</code></pre>
-
-					<pre><code class="fragment hljs" data-trim contenteditable>
-							git merge nova_linha_tabela
-						</code></pre>
-
-					<pre><code class="fragment hljs" data-trim contenteditable>
-							git stash pop
-						</code></pre>
-
-					<ul class="fragment">
-						<li>Necessário tratar conflito antes de efetuar o commit</li>
-					</ul>
-
-				</section>
 			</section>
 			<!-- Fluxo Worl Team-->
 			<section>
