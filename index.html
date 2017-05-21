@@ -334,7 +334,7 @@
 				</section>
 
 				<section>
-					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>					
+					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>
 				</section>
 
 				<section>
@@ -349,7 +349,7 @@
 				</section>
 
 				<section>
-					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>					
+					<h2>Cenário 1: Merge Simples entre Dois Branches</h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git merge nova_linha_tabela
 						</code></pre>
@@ -357,7 +357,7 @@
 				</section>
 
 				<section>
-					<h2>Cenário 2 Merge com Conflito</h2>					
+					<h2>Cenário 2 Merge com Conflito</h2>
 				</section>
 
 				<section>
@@ -373,7 +373,7 @@
 					</ul>
 				</section>
 
-			<!-- Fluxo Branch Conflito-->
+				<!-- Fluxo Branch Conflito-->
 
 				<section>
 					<h2>Ver Mensagem</h2>
@@ -409,57 +409,75 @@
 				<section>
 					<h2>Tópico 6: Repositório Origin</h2>
 					<ul>
-						<li> Cenário 1: Enviar o Repositório Local para Outra Máquina</li>
-						<li> Cenário 2: Clonar o Repositório Compatilhado</li>
+						<li> Cenário 1: Clonar o Repositório</li>
+						<li> Cenário 2: Enviar o Repositório Local para Outra Máquina</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Cenário 1: Enviar o Repositório Local para Outra Máquina</h2>
+					<h2>Cenário 1: Clonar Repostório </h2>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Saia do diretório atual</li>
+						<pre><code class="hljs" data-trim contenteditable>
+							cd ..
+						</code></pre>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Cenário 1: Clonar Repostório </h2>
+					<pre><code class="hljs" data-trim contenteditable>
+							git clone https://github.com/andrelimabessa/jornada_si_git.git
+						</code></pre>
+				</section>
+
+				<section>
+					<h2>Cenário 2: Enviar o Repositório Local para Outra Máquina</h2>
 				</section>
 
 				<section>
 					<h2>Pré-Requisito</h2>
 					<ul>
 						<li>Criar uma conta no GitHub</li>
-						<li>Criar um novo repositório GitHub</li>
+						<li>Criar um novo repositório GitHub (Crie com um nome diferente de repositorio)</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Cenário 1: Enviar o Repositório Local para Outra Máquina </h2>
+					<h2>Cenário 2: Enviar o Repositório Local para Outra Máquina </h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git remote add origin https://github.com/_endereço_repositorio_.git
 						</code></pre>
 					<pre><code class="hljs" data-trim contenteditable>
-							git push --set-upstream origin master
+							git push
 						</code></pre>
+					<ul>
+						<li>Observe no GitHub se o Push foi bem sucedido</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Cenário 1: Clonar Repostório </h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git clone https://github.com/andrelimabessa/jornada_si_git
-						</code></pre>
-
-
-
-						
-				</section>
-
-
-				<section>
-					<h3>Pré-Requisito 1: Criar branch com seu nome</h3>
-					<h3>Pré-Requisito 2: Entrar no seu branch</h3>
-					<h3>Pré-Requisito 3: Realize alguma alteração nele</h3>
-					<h3>Pré-Requisito 4: Commite a alteração localmente </h3>
+					<h2>Cenário 3: Buscar Atualizações do Repositório Remoto</h2>
 				</section>
 
 				<section>
-					<h2>Cenário 2: Enviar Alterações para o Repositório Remoto</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git push origin nome_branch_corrente
-						</code></pre>
+					<h2>Pré-Requisito 1</h2>
+					<ul>
+						<li>Compartilhe o link do seu repositório com o colega do lado</li>
+						<li>Adicione o colega como colaborador no GitHub</li>
+						<li>Será enviado um email para que o colega confirmar que ele deseja participar</li>
+						<li>Colega deve clonar o seu repositorio</li>
+					</ul>
+
+					<h2>Pré-Requisito 2</h2>
+					<ul>
+						<li>Colega deve criar um branch com o nome dele</li>
+						<li>Alterar o index.html, commitar e fazer um push</li>
+					</ul>
 				</section>
 
 				<section>
@@ -467,14 +485,6 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git pull
 						</code></pre>
-				</section>
-
-				<section data-background="#dddddd">
-					<img data-src="img/blessed.png">
-				</section>
-
-				<section data-background="#dddddd">
-					<img data-src="img/dictator.png">
 				</section>
 
 			</section>
