@@ -102,7 +102,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git init
 						</code></pre>
-					<img src="img/init.gif" style="width:640px;height:166px;">
+					<img src="img/init.gif" style="width:600px;height:375px;">
 				</section>
 
 			</section>
@@ -135,6 +135,7 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git status
 						</code></pre>
+					<img src="img/status.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
@@ -151,12 +152,16 @@
 					<pre><code class="hljs" data-trim contenteditable>
 							git status
 						</code></pre>
+					<img src="img/add.gif" style="width:600px;height:375px;">
 				</section>
 
 				<section>
 					<h2>Dica: Remover arquivo da Staging Area </h2>
 					<pre><code class="hljs" data-trim contenteditable>
 							git rm --cached index.html
+						</code></pre>
+					<pre><code class="hljs" data-trim contenteditable>
+							git rm --cached -r css/
 						</code></pre>
 				</section>
 
@@ -173,6 +178,12 @@
 						<li> Teste de novo o git status </li>
 					</ul>
 				</section>
+
+				<section>
+					<h2>Dica: .gitignore </h2>
+					<img src="img/gitignore.gif" style="width:600px;height:375px;">
+				</section>
+
 
 				<section>
 					<h2>Commitando Arquivo</h2>
@@ -209,14 +220,20 @@
 				<section>
 					<h2>Tópico 4: Desfazer Alterações</h2>
 					<ul>
-						<li> Eu como usuário quero desfazar alguma alteração</li>
-						<li> Entro em um diretório sob controle de versão</li>
-						<li> Indentifico um artefato que desejo que volte a uma condição anterior</li>
+						<li>Cenário 1: Descartar Alteração no Diretório de Trabalho</li>
+						<li>Cenário 2: Descartar Alteração na Área de Preparação</li>
 					</ul>
 				</section>
 
 				<section>
-					<h2>Pré-Requisito: Altere dados em um arquivo que já se encontra em controle de versão </h2>
+					<h2>Cenário 1: Descartar Alteração no Diretório de Trabalho</h2>
+				</section>
+
+				<section>
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Altere dados em um arquivo que já se encontra em controle de versão </li>
+					</ul>
 				</section>
 
 				<section>
@@ -230,16 +247,25 @@
 				<section>
 					<h2>Cenário 1: Descartar Alteração no Diretório de Trabalho</h2>
 					<pre><code class="hljs" data-trim contenteditable>
-							git checkout HEAD arquivo
+							git checkout HEAD nome_do_arquivo
 						</code></pre>
 				</section>
 
 				<section>
-					<h2>Pré-Requisito: Altere dados em um arquivo que já se encontra em controle de versão </h2>
-					<pre><code class="hljs" data-trim contenteditable>
-							git add arquivo
-						</code></pre>
+					<h2>Cenário 2: Descartar Alteração na Área de Preparação</h2>
 				</section>
+
+				<section>
+					<h2>Pré-Requisito</h2>
+					<ul>
+						<li>Altere dados em um arquivo que já se encontra em controle de versão</li>
+						<li>Adiciona esse arquivo na Stagin Area</li>
+						<pre><code class="hljs" data-trim contenteditable>
+							git add nome_do_arquivo
+						</code></pre>
+					</ul>
+				</section>
+
 				<section>
 					<h2>Dica: diff</h2>
 					Para ver as alterações na Staging Area
@@ -250,7 +276,7 @@
 				<section>
 					<h2>Cenário 2: Descartar Alteração na Área de Preparação</h2>
 					<pre><code class="hljs" data-trim contenteditable>
-							git reset HEAD arquivo
+							git reset HEAD nome_do_arquivo
 						</code></pre>
 				</section>
 
@@ -260,7 +286,7 @@
 			<section>
 
 				<section>
-					<h2>Caso 4: Gerenciar Branches - Básico</h2>
+					<h2>Tópico 5: Gerenciar Branches - Básico</h2>
 					<ul>
 						<li> Eu como usuário desejo gerenciar branches</li>
 						<li> Entro em um diretório sob controle de versão</li>
